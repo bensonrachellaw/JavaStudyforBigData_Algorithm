@@ -1,0 +1,322 @@
+1.消消乐（字符串）
+描述：
+给定一个只包含大小写字母的字符串（大小写敏感），若相邻两个元素相等则消除，直到最后字符串消除不了了，输出消消乐后字符串的长度，若遇到非大小写字母以外的字符，则输出0。
+解法：字符串，使用栈（LinkedList）。
+
+例子：
+
+输入： mMbccbc
+输出： 3
+解释：cc消掉，然后bb消掉，最后剩余mMc,输出长度3
+
+2.统计重合的时间。
+
+举办一场8小时的聚会，时间段从12：00到20：00点，让来访的客人事先填好到达的时间和离开的时间，为了掌握聚会期间的座位数目，需要先估计不同时间的最大客人数量。
+
+  1.到达和离开的时间，以整点计算，输入为整数，比如“12，18”表示客人到达的时间为12点后13点前，离开的时间是17点后18点前。
+
+  2.按小时区间统计客人的数量，需要统计[12，13),[13,14)….[19，20)共有8个时间段的最大客人数量。
+
+public class JvmTest {
+    public static void main(String[] args) throws IOException {
+
+        Map<String, Integer> result = new HashMap<>();
+String temp = "16,18";
+String[] split = temp.split(",");
+
+        int a = Integer.valueOf(split[0]);
+        int b = Integer.valueOf(split[1]);
+        if (a > b || a < 12 || b > 20) {
+            return;
+}
+
+        for (int i = a; i < b; i++) {
+            String key = "[" + i + "," + (i + 1) + ")" + ":";
+            if (result.containsKey(key))
+                result.put(key, result.get(key) + 1);
+            else
+result.put(key, 1);
+}
+
+        result.entrySet().stream().sorted(
+                Map.Entry.<String, Integer>comparingByKey().reversed()).collect(
+                Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (o1, o2) -> o1, LinkedHashMap::new));
+
+result.entrySet().forEach(e -> System.out.println(e.getKey() + e.getValue()));
+
+}
+}
+
+3.MB、TB 、GB的转换排序。
+
+//hashmap按值降序排序。
+Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
+      @Override
+      public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+        return o2.getValue().compareTo(o1.getValue());
+      }
+    });
+
+
+4.要开发一款教育类APP，帮助幼儿在识数阶段做一百以内自然数[0,99]的加减法。屏幕上会显示"0", “1”,“2”,“3”, “4”, “5”, “6”, “7”, “8”,“9”,"+","-","=“这些按钮，
+  用户在按了若干按钮之后，如果按了”="，则会把"="之前的字符串作为一个算式，计算结果。中间结果或最后结果可以为负数。
+
+  private static int calcMethod1(String s){
+          Stack<Integer> stack = new Stack<>();
+          int i = 0;
+          char[] chars = s.toCharArray();
+          int len = chars.length;
+          int fuhao = -1;
+          while(i < len){
+              int num = 0;
+              while(i < len && chars[i] <= '9' && chars[i] >= '0'){
+                  num = num * 10 + (chars[i] - '0');
+                  i++;
+              }
+              stack.push(num);
+              if(stack.size() == 2){
+                  int n2 = stack.pop();
+                  int n1 = stack.pop();
+                  int res = 0;
+                  if(fuhao == 0) res = n1 - n2;
+                  else if(fuhao == 1) res = n1 + n2;
+                  stack.push(res);
+                  System.out.println(res);
+              }
+              if(i < len && chars[i] == '-') fuhao = 0;
+              else if(i < len && chars[i] == '+') fuhao = 1;
+              i++;
+          }
+          return stack.pop();
+      }
+
+
+5.输入一个字符串（不含空格），请寻找输入中包含的所有蛇形字符串。
+  蛇形字符串的定义：
+
+  蛇形字符串由连续字符对组成，其特点如下：
+  1.1 字符对定义：字符对由同一字母的大写和小写组成（前大后小），如：Aa，Dd
+  1.2 蛇形字符串中包含的字符对，必须是连续字母，并按照字母顺序排序。如：AaBbCc，OoPpRrSs
+  从输入中寻找字符组成蛇形字符串（字符顺序不限），符合规则：
+  2.1 每次寻找必须是最长的蛇形字符串
+  2.2 使用过的字符串不能重复使用
+  输入描述
+  一个字符串（不含空格，字符串长度<= 5000）
+
+  输出描述
+  所有包含的蛇形字符串，按首字母升序排列（即A在Z前）
+  同一个首字母的情况，按照蛇形字符串长度降序输出
+
+
+     private static void snakeString(String s){
+         List<String> list = new ArrayList<>();
+         char[] chars = s.toCharArray();
+         int[] lowerLetter = new int[26];
+         int[] upperLetter = new int[26];
+         for(int i = 0;i < chars.length;i++){
+             if(chars[i] >= 'A' && chars[i] <= 'Z') upperLetter[chars[i] - 'A']++;
+             if(chars[i] >= 'a' && chars[i] <= 'z') lowerLetter[chars[i] - 'a']++;
+         }
+         int pairs = 0; //大小写的对数
+         for(int i = 0;i < lowerLetter.length;i++){
+             int min = Math.min(lowerLetter[i], upperLetter[i]);
+             upperLetter[i] = min;
+             lowerLetter[i] = min;
+             pairs += (min != 0) ? min : 0;
+         }
+         if(pairs == 0)
+             System.out.println("Not Found");
+         while(pairs != 0){
+             int start = 0, len = 0, max = 0, st = 0;
+             for(int i = 0;i < 26;i++){
+                 len = 0;
+                 if(upperLetter[i] != 0){
+                     st = i;
+                     i++;
+                     len++;
+                     while(i < 26 && upperLetter[i] != 0) {
+                         len++;
+                         i++;
+                     }
+                     if(len > max){
+                         start = st;
+                         max = len;
+                     }
+                 }
+             }
+             StringBuilder sb = new StringBuilder();
+             for(int i = start;i < start + max;i++){
+                 pairs--;
+                 sb.append((char)(i + 'A'));
+                 sb.append((char)(i + 'a'));
+                 //System.out.print((char)(i + 'A'));
+                 //System.out.print((char)(i + 'a'));
+                 lowerLetter[i]--;
+                 upperLetter[i]--;
+             }
+             list.add(sb.toString());
+         }
+         Collections.sort(list);
+         for(String str : list)
+             System.out.println(str);
+     }
+
+6.找一组数字中（共21个），四个连续的数字的和最大，然后输出这四个数字的第一个数字的序号。
+
+  如果有和是相同的，就输出那个序号小的。
+
+
+7.输入是m个黑名单IP网段（例如127.0.0.1/24）和n个IP地址（如127.0.0.1）。
+  输出n个IP地址中在黑名单中的IP地址。
+
+  提示：ip地址解码后放哈希表，然后用哈希表对比，不用一位一位比的
+
+8.输入含有7个字符的字符串，或者输入7个字符，在第一个和最后一个字符保持不变的情况下，对中间5个字符按ASCII值从大到小排序
+
+9.输入一系列由单词组成的字符串，字符串的输入格式和写文章的输入格式一样，但该字符串在此仅有空格，逗号，句号和相应的英文单词组成，并且区分大小写（如What 和what是不同的单词）。
+  程序的输出要求除去其中的逗号，句号以及重复的单词，并输出
+
+   String regEx="[\n`~!@#$%^&*()+=|{}':;',\\[\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。， 、？]";
+
+   String newString = str.replaceAll(regEx, "");
+
+
+10.做⼀个投票机制，评选规则：
+   （1）票数最多者当选
+   （2）票数相同时，按照员⼯姓名排序，⾸字母越⼩越排前，a>b>c; A>B>C 如果姓名之间有包含关系，短名字排在长名字的前⾯
+
+
+A	&#065;	大写字母 A ； Z	&#090;	大写字母 Z
+a	&#097;	小写字母 a ； z	&#122;	小写字母 z
+
+
+charAt(int index)
+          返回指定索引处的 char 值。
+ int codePointAt(int index)
+          返回指定索引处的字符（Unicode 代码点）。
+ int codePointBefore(int index)
+          返回指定索引之前的字符（Unicode 代码点）。
+ int codePointCount(int beginIndex, int endIndex)
+          返回此 String 的指定文本范围中的 Unicode 代码点数。
+ int compareTo(String anotherString)
+          按字典顺序比较两个字符串。
+ int compareToIgnoreCase(String str)
+          按字典顺序比较两个字符串，不考虑大小写。
+ String concat(String str)
+          将指定字符串连接到此字符串的结尾。
+ boolean contains(CharSequence s)
+          当且仅当此字符串包含指定的 char 值序列时，返回 true。
+ boolean contentEquals(CharSequence cs)
+          将此字符串与指定的 CharSequence 比较。
+ boolean contentEquals(StringBuffer sb)
+          将此字符串与指定的 StringBuffer 比较。
+static String copyValueOf(char[] data)
+          返回指定数组中表示该字符序列的 String。
+static String copyValueOf(char[] data, int offset, int count)
+          返回指定数组中表示该字符序列的 String。
+ boolean endsWith(String suffix)
+          测试此字符串是否以指定的后缀结束。
+ boolean equals(Object anObject)
+          将此字符串与指定的对象比较。
+ boolean equalsIgnoreCase(String anotherString)
+          将此 String 与另一个 String 比较，不考虑大小写。
+static String format(Locale l, String format, Object... args)
+          使用指定的语言环境、格式字符串和参数返回一个格式化字符串。
+static String format(String format, Object... args)
+          使用指定的格式字符串和参数返回一个格式化字符串。
+ byte[] getBytes()
+          使用平台的默认字符集将此 String 编码为 byte 序列，并将结果存储到一个新的 byte 数组中。
+ byte[] getBytes(Charset charset)
+          使用给定的 charset 将此 String 编码到 byte 序列，并将结果存储到新的 byte 数组。
+ void getBytes(int srcBegin, int srcEnd, byte[] dst, int dstBegin)
+          已过时。 该方法无法将字符正确转换为字节。从 JDK 1.1 起，完成该转换的首选方法是通过 getBytes() 方法，该方法使用平台的默认字符集。
+ byte[] getBytes(String charsetName)
+          使用指定的字符集将此 String 编码为 byte 序列，并将结果存储到一个新的 byte 数组中。
+ void getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin)
+          将字符从此字符串复制到目标字符数组。
+ int hashCode()
+          返回此字符串的哈希码。
+ int indexOf(int ch)
+          返回指定字符在此字符串中第一次出现处的索引。
+ int indexOf(int ch, int fromIndex)
+          返回在此字符串中第一次出现指定字符处的索引，从指定的索引开始搜索。
+ int indexOf(String str)
+          返回指定子字符串在此字符串中第一次出现处的索引。
+ int indexOf(String str, int fromIndex)
+          返回指定子字符串在此字符串中第一次出现处的索引，从指定的索引开始。
+ String intern()
+          返回字符串对象的规范化表示形式。
+ boolean isEmpty()
+          当且仅当 length() 为 0 时返回 true。
+ int lastIndexOf(int ch)
+          返回指定字符在此字符串中最后一次出现处的索引。
+ int lastIndexOf(int ch, int fromIndex)
+          返回指定字符在此字符串中最后一次出现处的索引，从指定的索引处开始进行反向搜索。
+ int lastIndexOf(String str)
+          返回指定子字符串在此字符串中最右边出现处的索引。
+ int lastIndexOf(String str, int fromIndex)
+          返回指定子字符串在此字符串中最后一次出现处的索引，从指定的索引开始反向搜索。
+ int length()
+          返回此字符串的长度。
+ boolean matches(String regex)
+          告知此字符串是否匹配给定的正则表达式。
+ int offsetByCodePoints(int index, int codePointOffset)
+          返回此 String 中从给定的 index 处偏移 codePointOffset 个代码点的索引。
+ boolean regionMatches(boolean ignoreCase, int toffset, String other, int ooffset, int len)
+          测试两个字符串区域是否相等。
+ boolean regionMatches(int toffset, String other, int ooffset, int len)
+          测试两个字符串区域是否相等。
+ String replace(char oldChar, char newChar)
+          返回一个新的字符串，它是通过用 newChar 替换此字符串中出现的所有 oldChar 得到的。
+ String replace(CharSequence target, CharSequence replacement)
+          使用指定的字面值替换序列替换此字符串所有匹配字面值目标序列的子字符串。
+ String replaceAll(String regex, String replacement)
+          使用给定的 replacement 替换此字符串所有匹配给定的正则表达式的子字符串。
+ String replaceFirst(String regex, String replacement)
+          使用给定的 replacement 替换此字符串匹配给定的正则表达式的第一个子字符串。
+ String[] split(String regex)
+          根据给定正则表达式的匹配拆分此字符串。
+ String[] split(String regex, int limit)
+          根据匹配给定的正则表达式来拆分此字符串。
+ boolean startsWith(String prefix)
+          测试此字符串是否以指定的前缀开始。
+ boolean startsWith(String prefix, int toffset)
+          测试此字符串从指定索引开始的子字符串是否以指定前缀开始。
+ CharSequence subSequence(int beginIndex, int endIndex)
+          返回一个新的字符序列，它是此序列的一个子序列。
+ String substring(int beginIndex)
+          返回一个新的字符串，它是此字符串的一个子字符串。
+ String substring(int beginIndex, int endIndex)
+          返回一个新字符串，它是此字符串的一个子字符串。
+ char[] toCharArray()
+          将此字符串转换为一个新的字符数组。
+ String toLowerCase()
+          使用默认语言环境的规则将此 String 中的所有字符都转换为小写。
+ String toLowerCase(Locale locale)
+          使用给定 Locale 的规则将此 String 中的所有字符都转换为小写。
+ String toString()
+          返回此对象本身（它已经是一个字符串！）。
+ String toUpperCase()
+          使用默认语言环境的规则将此 String 中的所有字符都转换为大写。
+ String toUpperCase(Locale locale)
+          使用给定 Locale 的规则将此 String 中的所有字符都转换为大写。
+ String trim()
+          返回字符串的副本，忽略前导空白和尾部空白。
+static String valueOf(boolean b)
+          返回 boolean 参数的字符串表示形式。
+static String valueOf(char c)
+          返回 char 参数的字符串表示形式。
+static String valueOf(char[] data)
+          返回 char 数组参数的字符串表示形式。
+static String valueOf(char[] data, int offset, int count)
+          返回 char 数组参数的特定子数组的字符串表示形式。
+static String valueOf(double d)
+          返回 double 参数的字符串表示形式。
+static String valueOf(float f)
+          返回 float 参数的字符串表示形式。
+static String valueOf(int i)
+          返回 int 参数的字符串表示形式。
+static String valueOf(long l)
+          返回 long 参数的字符串表示形式。
+static String valueOf(Object obj)
+          返回 Object 参数的字符串表示形式。

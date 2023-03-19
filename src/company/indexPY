@@ -1,0 +1,144 @@
+.idea
+
+超大容量01背包，输入优化 一维数组
+ 12个月前
+1.D - Knapsack 1.py
+
+01背包，输入优化 一维数组
+ 12个月前
+10.A - Frog 1.py
+
+青蛙跳台阶，一维单循环线性dp，记录跳到每一个位置的最小的total_cost。每次能跳一格或者两格。
+ 11个月前
+11.B - Frog 2.py
+
+青蛙跳台阶，一维线性dp，记录跳到每一个位置的最小的total_cost。每次能跳1到k格，因为k不大，所以加一层循环。
+ 11个月前
+12.Coin Combinations I.py
+
+跟Frog2是一样的题，跟Coin CombinationsⅡ不是同类型的， 只能用一维数组，把给定数组当成青蛙能跳的格数。但是这里是累加方法数。
+ 11个月前
+13.Grid Paths.py
+
+填表计算从左上方的格子到右下方的格子的路径数，不能走*格
+ 11个月前
+14.Removing Digits.py
+
+每次从此整数的每一位数字中挑一个步数最少的转移到此整数作为dp值：即tmp = min(tmp,dp[i-int(item)]+1)，就能找…
+ 11个月前
+15.G - Longest Path.py
+
+DAG可以求以每个顶点为终点的最长简单路径。
+ 11个月前
+16.E - Peddler.py
+
+DAG DP
+ 11个月前
+17.C - Vacation.py
+
+dp[i][j] 为 DAG图中到这个点的 最大和
+ 11个月前
+18.Increasing Subsequence.py
+
+《最长严格递增子序列》的N方的dp做法，在cses上TLE
+ 11个月前
+18.Increasing SubsequenceⅡ.py
+
+《最长严格递增子序列》的dp+二分优化 nlogn做法 更新解释
+ 11个月前
+19.F - LCS.py
+
+子序列是可以不连续的，子串是一定要连续的，构造一个LCS的策略。
+ 11个月前
+2.E - Knapsack 2.py
+
+超大容量01背包，输入优化 一维数组
+ 12个月前
+20.Edit Distance.py
+
+编辑距离
+ 11个月前
+21.E - Sequence Matching.py
+
+删除、增加、替换（修改） 的总量，也就是字符串编辑距离，经典问题!!!
+ 11个月前
+22.D - FG operation.py
+
+二维线性dp：dp[i][j] 表示 数组前i个做这两个操作产生的最后的结果为j的方法数
+ 11个月前
+23.E - Traveler.py
+
+按照颜色的顺序来做DP，当前颜色从前一个颜色转移过来。颜色不一定连续的。
+ 11个月前
+24.D - Between Two Arrays.py
+
+求可以是c的序列个数 整体思路做法想出来了。
+ 11个月前
+25.E - Queen on Grid.py
+
+思路对了，方法对了，优化对了，为什么超时呢？因为我的初始化是分离先预处理好的，但是初始化的这一行没有记得取模。以为第一行的结果不会那么大吧。
+ 11个月前
+26.E - Mod i.py
+
+dp[i][j]表示前i个数分成j组的方案数。难
+ 11个月前
+27.Array Description.py
+
+dp[i][j]表示前i个数中最后一个数取j的序列个数.
+ 10个月前
+28.LCIS.py
+
+最长公共严格递增子序列。难！需要优化
+ 10个月前
+29.LIS on Tree.py
+
+树上的最长严格递增子序列。LIS on Tree。树的遍历DFS＋DP+回溯。不存在1到k有两条路径
+ 10个月前
+3.Coin Combinations II.py
+
+硬币组合Ⅱ 一维数组
+ 12个月前
+30.（状态压缩）E - Get Everything.py
+
+2的12次方很小,所以可以用4096个表示所有可能的方案,12个bit,0表示不开 1表示开.
+ 10个月前
+31.(数位DP01）Amount of Degrees（度的数量）.py
+
+数位DP 条件：这个数恰好等于K个互不相等的B的整数次幂之和
+ 10个月前
+32.(数位DP02）从1到n整数中1出现的次数.py
+
+数位统计 条件：从1到n整数中1出现的次数
+ 10个月前
+33.D - Weak Takahashi.py
+
+offer：礼物的最大价值的升级版。
+ 8个月前
+4.Money Sums.py
+
+子集和问题 一维数组 bitset并行（一层循环）
+ 12个月前
+5.Minimizing Coins.py
+
+参照完全背包模式，一个物品可以选多次，与3.Coin Combinations II类似的结构，只不过本题是算最小值。更新
+ 11个月前
+6.Two Sets II.py
+
+参照01背包模式，一个物品可以选一次 子集和问题，求方法数。3.Coin Combinations II是完全背包的求方法数。
+ 11个月前
+6.Two Sets II（打表）.py
+
+打表法
+ 11个月前
+7.Book Shop.py
+
+01背包
+ 11个月前
+8.D - Strange Lunchbox.py
+
+限制状态有两层、01背包、打怪兽（可以超出的）（求最小的数量）。
+ 11个月前
+9.E - Crested Ibis vs Monster（打怪兽，第二次...
+
+（打怪兽，第二次做）
+ 11个月前

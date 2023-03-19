@@ -1,0 +1,93 @@
+1、求最大路径
+1.1、先根据中序和后序构造出原来的二叉树
+1.2、再根据递归最大路径算法求出两个结点之间的最大路径
+100%
+
+2、LRU
+一开始我用的Java标准库的LinkedList，超时了，只过了85%
+后来自己实现了一个双向链表，HashMap里储存的是Node，100%
+
+3、BFS
+第一层是1跳就能到达终点的
+第二层是要么在最左的一步右边，要么是i+jumps[i]刚好跳到一步的那些点
+第三层要么是在最左边的两步的右边，要么是i+jumps[i]刚好跳到两步的那些点
+...
+就是标准的BFS算法，不知道为什么只过了20%
+
+package org.wangyi;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Main {
+    static Map<Integer,Integer> position=new HashMap<>();
+    static int res=0;
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] inorder=new int[n];
+        int[] postorder=new int[n];
+        for(int i=0;i<n;i++){
+            inorder[i]=sc.nextInt();
+            position.put(inorder[i],i);
+        }
+        for(int i=0;i<n;i++){
+            postorder[i]=sc.nextInt();
+        }
+
+        TreeNode root=build(inorder,0,n-1,postorder,0,n-1);
+//        dfs01(root);
+        dfs(root);
+        System.out.println(res);
+    }
+
+    public static TreeNode build(int[] inorder,int left1,int right1,int[] postorder,int left2,int right2){
+        if(left1>right1){
+            return null;
+        }
+        int index=position.get(postorder[right2]);
+        TreeNode root=new TreeNode(postorder[right2]);
+        root.left=build(inorder,left1,index-1,postorder,left2,left2+index-1-left1);
+        root.right=build(inorder,index+1,right1,postorder,left2+index-left1,right2-1);
+        return root;
+    }
+
+    public static void dfs01(TreeNode root){
+        if(root==null){
+            return ;
+        }
+        System.out.println(root.val);
+        dfs01(root.left);
+        dfs01(root.right);
+    }
+
+    public static int dfs(TreeNode root){
+        if(root==null){
+            return 0;
+        }
+        int left=0,right=0;
+        if(root.left!=null){
+            left=dfs(root.left);
+        }
+        if(root.right!=null){
+            right=dfs(root.right);
+        }
+//        System.out.println("root.val"+root.val);
+        res=Math.max(res,left+right);
+        return Math.max(left,right)+1;
+    }
+}
+class TreeNode{
+    int val;
+    TreeNode left;
+    TreeNode right;
+    public TreeNode(int val){
+        this.val=val;
+    }
+    public TreeNode(int val,TreeNode left,TreeNode right){
+        this.val=val;
+        this.left=left;
+        this.right=right;
+    }
+}

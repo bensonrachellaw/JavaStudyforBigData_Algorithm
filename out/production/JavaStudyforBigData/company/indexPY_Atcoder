@@ -1,0 +1,357 @@
+226.B - Counting Arrays.py
+
+删除重复（完全一样的）的数组
+ 10个月前
+226.C - Martial artist.py
+
+图的遍历，BFS DFS
+ 10个月前
+227.A - Last Card.py
+
+227
+ 9个月前
+227.B - KEYENCE building.py
+
+227
+ 9个月前
+227.C - ABC conjecture.py
+
+227
+ 9个月前
+228.A - On and Off.py
+
+228 A 、 B
+ 9个月前
+228.B - Takahashi's Secret.py
+
+228 A 、 B
+ 9个月前
+228.C - Final Day.py
+
+r.sort(key=lambda x :x[1],reverse=True)，二维数组按第二列排序
+ 9个月前
+228.D - Linear Probing.py
+
+线性探测 并查集 跳过一些连续的兄弟节点达到父节点，就不用每次加1，节省时间
+ 9个月前
+231.A - Water Pressure.py
+
+231 A
+ 9个月前
+231.B - Election.py
+
+231 D 无向图判断是否存在环，DFS 拓扑排序
+ 9个月前
+231.C - Counting 2.py
+
+231 D 无向图判断是否存在环，DFS 拓扑排序
+ 9个月前
+231.D - Neighbors.py
+
+231 D 无向图判断是否存在环，DFS 拓扑排序
+ 9个月前
+231.D - Neighbors1.py
+
+231 D 无向图判断是否存在环，DFS 拓扑排序
+ 9个月前
+
+ ABC
+
+ 231 D 无向图判断是否存在环，DFS 拓扑排序
+  9个月前
+ 白板理论
+
+ 更新二分专题 step4 A. Maximum Average Segment
+  12个月前
+ A. Binary Search(CF).py
+
+ codeforces 二分专题 1st 二分查找
+  1年前
+ B - Abbreviate Fox.py
+
+ 字符串操作：“消消乐”解法
+  1年前
+ B. Closest to the Left（CF）.py
+
+ codeforces 二分专题 2nd 3rd 找出有序序列中，B不大于给定数的最大值、C不小于给定数的最小值。
+  1年前
+ C - ABC Tournament.py
+
+ C - ABC Tournament
+  1年前
+ C - Bowls and Dishes.py
+
+ C - Bowls and Dishes（DFS+判断）or itertools.product
+  1年前
+ C - Bowls and Dishes（生成组合）.py
+
+ 三题：正面入手、差分序列+前缀和、生成组合法（二进制）
+  1年前
+ C - Buy an Integer.py
+
+ 二分搜索，模板，背诵的
+  1年前
+ C - Many Segments.py
+
+ 开区间化闭区间（大转小）
+  1年前
+ C - Sum of product of pairs.py
+
+ C - Sum of product of pairs
+  1年前
+ C - Traveling Salesman around Lake.py
+
+ C - Traveling Salesman around Lake +link
+  1年前
+ C - Tsundoku.py
+
+ 172 C - Tsundoku 综合应用 129 C - Typical Stair 动态规划
+  1年前
+ C - Typical Stairs.py
+
+ 172 C - Tsundoku 综合应用 129 C - Typical Stair 动态规划
+  1年前
+ C - Ubiquity.py
+
+ 容斥原理+快速幂 当正面思考不对时，思考：减法原理。更新题解链接
+  1年前
+ C - Unexpressed.py
+
+ 三题：正面入手、差分序列+前缀和、生成组合法（二进制）
+  1年前
+ C - chokudai(DP).py
+
+ 基础DP
+  1年前
+ C. Closest to the Right(CF).py
+
+ codeforces 二分专题 2nd 3rd 找出有序序列中，B不大于给定数的最大值、C不小于给定数的最小值。
+  1年前
+ D - Choose Me.py
+
+ 贪心，但是难点在于找出贪心值，即需要以这个值做贪心的数，像这道题：2A+B
+  1年前
+ D - Cooking（DP子集和问题）.py
+
+ D - Cooking（DP子集和问题）更新一维数组做法，更新bitset做法
+  12个月前
+ D - KAIBUNsyo-方法二（回文序列，图，连通分量，DSU）.py
+
+ DSU并查集
+  12个月前
+ D - KAIBUNsyo（回文序列，图，连通分量，BFS）.py
+
+ 这不是一道字符串的题目 是无向非连通图的遍历
+  12个月前
+ D - Leaping Tak（DP）.py
+
+ 基础线性DP，leak_tak 利用前缀和优化时间复杂度才能AC。
+  1年前
+ D - Logical Expression.py
+
+ DP：分两种情况，OR AND OR的情况像青蛙过河那个,更新，更新原地dp，不用数组
+  1年前
+ D - Number of Shortest paths（BFS）.py
+
+ BFS 找出最短路线，那么必然使用 BFS ，BFS有求最短路径的性质，一层一层入队，队中元素的层级之差（相差）不会超过1
+  12个月前
+ D - Pair of Balls（图论+建模+拓扑排序）.py
+
+ 每种颜色转化成一个点。模型建的不完整搞了一天！！！模型缺了一部分。
+  12个月前
+ D - Querying Multiset.py
+
+ 有点像时间序列上的差分和前缀和。需要转换公式得到；数据结构必须采用heapq，是一种优先队列，可以从堆中弹出最小的元素。
+  1年前
+ D - RGB Triplets.py
+
+ 162 D - RGB Triplets，用总的RGB的 减去 等距的RGB 等于 不等距的RGB
+  1年前
+ D - Redistribution.py
+
+ 内容可能含有违规信息
+  1年前
+ D - Shortest Path Queries 2（二维线性DP）.py
+
+ 多源最短路径和 Floyd–Warshall algorithm 每次加一个k进去，看看所有的点之间的距离是否变短，变短就更新
+  1年前
+ D - Snuke Prime（差分加离散化，只记录起点和终点）.py
+
+ （差分加离散化，只记录起点和终点）用字典，用数组会超内存，开不了那么大的数组
+  12个月前
+ D - Sum of difference.py
+
+ 186求所有数之间的差的绝对值、171异或
+  1年前
+ D - Water Heater.py
+
+ 三题：正面入手、差分序列+前缀和、生成组合法（二进制）
+  1年前
+ D. Fast search（CF）.py
+
+ 后面经过宿舍讨论后，发现其实不需要特殊处理
+  1年前
+ E - Crested Ibis vs Monster (完全背包改版）.py
+
+ (完全背包改版）打怪兽
+  1年前
+ E - Red Scarf.py
+
+ 186求所有数之间的差的绝对值、171异或 更新
+  1年前
+ E - Third Avenue(BFS+多传送门搜索）.py
+
+ E - Third Avenue BFS+多传送门搜索 找出最短路线，那么必然使用 BFS
+  12个月前
+ TPM（step1）A. Merging Arrays.py
+
+ 双指针专题 step1 三题
+  1年前
+ TPM（step1）B. Number of Smaller.py
+
+ 双指针专题 step1 三题
+  1年前
+ TPM（step1）C. Number of Equal.py
+
+ 双指针专题 step1 三题
+  1年前
+ TPM（step2）A. Segment with Small Sum.py
+
+ 双指针专题 step2 四题 枚举r,维护一个最（大）小的l
+  1年前
+ TPM（step2）B. Segment with Big Sum.py
+
+ 双指针专题 step2 四题 枚举r,维护一个最（大）小的l
+  1年前
+ TPM（step2）C. Number of Segments with ...
+
+ 双指针专题 step2 四题 枚举r,维护一个最（大）小的l
+  1年前
+ TPM（step2）D. Number of Segments with ...
+
+ 双指针专题 step2 四题 枚举r,维护一个最（大）小的l
+  1年前
+ TPM（step2）E. Segments with Small Set（...
+
+ 双指针专题 区间内不同数字的个数、区间内最大值与最小值的差值
+  1年前
+ TPM（step2）F - Segments with Small Spr...
+
+ 更新单调栈做法！
+  12个月前
+ TPM（step2）F - Segments with Small Spr...
+
+ st表的使用，使用了先建表后查询的方法，建表有递推式。
+  1年前
+ TPM（step2）G. Coprime Segment（st表）.py
+
+ st表（GCD）细节更新
+  12个月前
+ TPM（step2）G. Coprime Segment（单调栈）.py
+
+ G. Coprime Segment（单调栈的做法）
+  12个月前
+ TPM（step3）A - Looped Playlist (CF).py
+
+ 双指针专题 step3
+  1年前
+ TPM（step3）B. Total Length（CF）.py
+
+ 双指针专题 step3
+  1年前
+ TPM（step3）C. Che city（CF）.py
+
+ 双指针专题 step3 一题有序数组 一题背包问题（连续区间）
+  1年前
+ TPM（step3）D. Stylish clothes(CF).py
+
+ step 3 D题 Stylish clothes 先把全部的数值与他们对应的衣服类型组成(val,type)，找最接近的四个数（从四个数组…
+  12个月前
+ TPM（step3）E. Knapsack on a Segment （C...
+
+ 双指针专题 step3 一题有序数组 一题背包问题（连续区间）
+  1年前
+ TPM（step3）F. Card Substrings(CF).py
+
+ 双指针专题 step3 求区间子串能由卡片组合出来的区间个数
+  12个月前
+ TPM（step3）G. Not Very Rude Substring ...
+
+ 双指针专题 step3 求满足区间[l,r]中"ab"子序列的数量不超过c；ab是有顺序的，a在前面，b在后面，所以a只与在它后面的b相配对…
+  12个月前
+ TPM（step3）H. A-B Knapsack（CF）.py
+
+ 双指针专题 step3 类比Atcoder“172 C - Tsundoku” 因为选择k个A,一定是选择前k大的;所以必须先排序两个数组
+  12个月前
+ TPM（step3）I. Segment with the Require...
+
+ 单调栈里面再套D题Cooking的子集和问题
+  12个月前
+ cses Dice Combinations.py
+
+ 内容可能含有违规信息
+  1年前
+ （step2）A. Packing Rectangles（CF）.py
+
+ step2：记得要max（w，h）
+  1年前
+ （step2）B. Ropes（CF）.py
+
+ （step2）B. Ropes（CF）字节跳动，绳子问题，转化判断条件。
+  1年前
+ （step2）C. Very Easy Task（CF）.py
+
+ 二分专题，又是一道非整数的二分 **这种求幂的方法只适合正数 返回l r都ac
+  1年前
+ （step2）D. Children Holiday（CF）.py
+
+ 求在当前时间内，某个助手最多能吹多少个气球，用O(1)复杂度的公式。
+  1年前
+ （step2）E - Equation（CF）.py
+
+ 二分专题，又是一道非整数的二分 **这种求幂的方法只适合正数 返回l r都ac
+  1年前
+ （step2）F. String Game （CF）.py
+
+ 二分专题，判断条件很难写啊
+  1年前
+ （step2）G. Student Councils （CF）.py
+
+ 二分专题，判断条件很难写啊
+  1年前
+ （step2）H. Hamburgers（CF）.py
+
+ 二分专题，判断条件很难写 汉堡 应该时比较钱够不够最好。
+  1年前
+ （step3）A. Get together（CF）.py
+
+ （step3）A. Get together（CF）复习更新
+  12个月前
+ （step3）B. Splitting an Array（CF）.py
+
+ （step3）B. Splitting an Array（CF）复习更新
+  12个月前
+ （step3）C. Cows in Stalls（CF）.py
+
+ 最大值最小化/最小值最大化
+  1年前
+ （step4）A. Maximum Average Segment（CF）.py
+
+ 更新二分专题 step4 A. Maximum Average Segment
+  12个月前
+ （step4）C. Pair Selection（CF）.py
+
+ （step4）C. Pair Selection（CF）复习更新
+  12个月前
+ （step5）A. K-th Number in the Union of...
+
+ 寻找第K小，注意从0开始还是从1开始，然后，都是左二分，统一了。
+  1年前
+ （step5）B. Multiplication Table(CF).py
+
+ 双指针专题 step3
+  1年前
+ （step5）C. K-th Sum （CF）.py
+
+ 寻找第K小，注意从0开始还是从1开始，然后，都是左二分，统一了。
+  1年前

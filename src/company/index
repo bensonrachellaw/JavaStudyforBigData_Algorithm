@@ -1,0 +1,129 @@
+
+AmountofDegrees.java
+
+数位DP 这个数恰好等于K个互不相等的B的整数次幂之和
+ 10个月前
+ArrayDescription.java
+
+dp[i][j]表示前i个数中最后一个数取j的序列个数.独自完成AC 画表！
+ 10个月前
+BetweenTwoArrays.java
+
+整体思路做法想出来了。要对每一组a，b中的每一个数单独做状态转移，所以要使用两个循环，第一个循环是0-n的，内层循环是每一组的a-b之间的每…
+ 11个月前
+CoinCombinationsI.java
+
+跟Frog2是一样的题，跟Coin CombinationsⅡ不是同类型的， 只能用一维数组，把给定数组当成青蛙能跳的格数。但是这里是累加方法数。
+ 11个月前
+CoinCombinationsII.java
+
+java Ac版本 dp数组不能用long 会超时，不能进行模操作太多次，会超时
+ 11个月前
+CrestedIbisvsMonster.java
+
+（打怪兽，第二次做）
+ 11个月前
+EditDistance.java
+
+编辑距离
+ 11个月前
+FGoperation.java
+
+二维线性DP，不难 但是不会做
+ 11个月前
+Frog1.java
+
+青蛙跳台阶，一维单循环线性dp，记录跳到每一个位置的最小的total_cost。每次能跳一格或者两格。
+ 11个月前
+Frog2.java
+
+青蛙跳台阶，一维线性dp，记录跳到每一个位置的最小的total_cost。每次能跳1到k格，因为k不大，所以加一层循环。
+ 11个月前
+GetEverything.java
+
+2的12次方很小,所以可以用4096个表示所有可能的方案,12个bit,0表示不开 1表示开.
+ 10个月前
+GridPaths.java
+
+//如何输入字符矩阵
+ 11个月前
+IncreasingSubsequence.java
+
+最长严格递增子序列 dp+二分优化 nlogn做法 才能AC
+ 11个月前
+Knapsack.java
+
+动态规划 01 背包 java 2021-09-13
+ 12个月前
+Knapsack2.java
+
+动态规划 超大容量01 背包 java 2021-09-13
+ 12个月前
+LCIS.java
+
+LCIS 板子 最长公共递增子序列 涉及java的函数调用，用静态即可，且是递归 以及以空格输出，注意print和println的区别
+ 10个月前
+LCS.java
+
+LCS + 构造
+ 11个月前
+LISonTree.java
+
+O(nlogn)算法的树上LIS。该题还需加入回溯，这样树上不同分支的数据，就不会互相影响
+ 10个月前
+LongestPath.java
+
+DAG可以求以每个顶点为终点的最长简单路径。ArrayList<> 可用于建邻接表 Deque可用于拓扑遍历
+ 11个月前
+MinimizingCoins.java
+
+参照完全背包模式，一个物品可以选多次，与3.Coin Combinations II类似的结构，只不过本题是算最小值。
+ 11个月前
+Modihard.java
+
+dp[i][j]表示前i个数分成j组的方案数。难
+ 11个月前
+MoneySums.java
+
+子集和问题 参考Cooking
+ 12个月前
+Peddler.java
+
+DAG DP dp[i]定义为到达i点之前（不包括i点）的最小出买卖值。最后再用max（a[i]-dp[i]）求最大的一个利润
+ 11个月前
+QueenonGrid.java
+
+java 数组得用long才行。思路对了，方法对了，优化对了，为什么超时呢？因为我的初始化是分离先预处理好的，但是初始化的这一行没有记得取模…
+ 11个月前
+RemovingDigits.java
+
+涉及操作 ：int转string char转string string转int 每次从此整数的每一位数字中挑一个步数最少的转移到此整数作为d…
+ 11个月前
+SequenceMatching.java
+
+删除、增加、替换（修改） 的总量，也就是字符串编辑距离，经典问题!!!
+ 11个月前
+StrangeLunchbox.java
+
+限制状态有两层、01背包、打怪兽（可以超出的）（求最小的数量）。
+ 11个月前
+Traveler.java
+
+按照颜色的顺序来做DP，当前颜色从前一个颜色转移过来。颜色不一定连续的。
+ 11个月前
+TwoSetsII.java
+
+java Ac版本 这题dp数组可以用long 但是也一样不能进行模操作太多次，会超时
+ 11个月前
+Vacation.java
+
+内容可能含有违规信息
+ 11个月前
+WeakTakahashi.java
+
+offer 礼物的最大价值的升级版
+ 8个月前
+numberOf1Between1AndN_Solution.java
+
+数位统计 从1到n整数中1出现的次数。
+ 10个月前
