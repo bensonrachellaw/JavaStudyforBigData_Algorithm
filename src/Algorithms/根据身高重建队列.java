@@ -16,7 +16,7 @@ public class 根据身高重建队列 {
     }
 //   只有先让身高高的先进入队伍，后面身高低的才能根据前面高的来找自己的位置
 //    [[7,0],[4,4],[7,1],[5,0],[6,1],[5,2]]
-//    所以更多时候我们是直接记住了compare（int o1, int o2）方法 return o1 - o2 是升序，return o2 - o1 是降序。那么原因我们不妨跳进去源码看一下.
+//    所以更多时候我们是直接记住了compare（int o1, int o2）方法 return o1 - o2 是升序，return o2 - o1 是降序。那么原因我们不妨跳进去源码看一下。return大于0就把前面往后移动。
     public int[][] reconstructQueue(int[][] people) {
         Arrays.sort(people, new Comparator<int[]>() {
             @Override
