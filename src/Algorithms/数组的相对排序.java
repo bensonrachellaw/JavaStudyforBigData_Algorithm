@@ -20,7 +20,7 @@ public class 数组的相对排序 {
         for (int i = 0;i<arr2.length;i++) {
             map.put(arr2[i],i);
         }
-        //外部的map可以放进来compare函数里
+        //外部的map可以放进来compare函数里的
         Collections.sort(list, new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
