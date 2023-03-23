@@ -29,7 +29,7 @@ public class DayFive3 {
         });
 
           //四种方式都能实现升序的优先队列。
-//        所以更多时候我们是直接记住了compare（int o1, int o2）方法 return o1 - o2 是升序，return o2 - o1 是降序。那么原因我们不妨跳进去源码看一下.
+          //所以更多时候我们是直接记住了compare（int o1, int o2）方法 return o1 - o2 是升序，return o2 - o1 是降序。那么原因我们不妨跳进去源码看一下.
         for (ListNode node : lists){
             if (node!=null){
                 que.offer(node);
